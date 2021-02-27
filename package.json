@@ -1,0 +1,68 @@
+{
+  "name": "clubhouse-terminal",
+  "version": "3.0.0",
+  "description": "A command line tool for viewing, creating and updating clubhouse.io stories",
+  "main": "index.js",
+  "engines": {
+    "node": ">= 7.6.*"
+  },
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "start": "node -r source-map-support/register build/bin/club.js",
+    "test": "npm run test:format",
+    "test:format": "prettier --list-different src/**/*.ts",
+    "format": "prettier --write src/**/*.ts",
+    "ci": "npm run build && npm run test"
+  },
+  "bin": {
+    "club": "./build/bin/club.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freight-trust/clubhouse.git"
+  },
+  "keywords": [
+    "clubhouse",
+    "cli"
+  ],
+  "author": "SEE LICENSE",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/freight-trust/clubhouse/issues"
+  },
+  "homepage": "https://github.com/freight-trust/clubhouse#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "dependencies": {
+    "chalk": "^2.2.0",
+    "cli-spinner": "^0.2.6",
+    "clubhouse-lib-api": "0.10.0",
+    "clubhouse-lib-api-api": "^0.12.0",
+    "commander": "^2.12.0",
+    "debug": "^4.0.0",
+    "prompt": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/chalk": "2.2.0",
+    "@types/cli-spinner": "0.2.0",
+    "@types/debug": "4.1.5",
+    "@types/node": "12.12.49",
+    "@types/node-fetch": "2.5.7",
+    "babel-eslint": "10.1.0",
+    "eslint": "7.4.0",
+    "eslint-config-standard": "14.1.1",
+    "eslint-plugin-babel": "5.3.1",
+    "eslint-plugin-import": "2.22.0",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-promise": "4.2.1",
+    "eslint-plugin-standard": "4.0.1",
+    "prettier": "2.0.5",
+    "source-map-support": "0.5.19",
+    "typescript": "3.8.3"
+  }
+}
